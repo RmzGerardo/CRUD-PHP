@@ -4,11 +4,13 @@ const app = new (function () {
     this.nombres = document.getElementById("nombres");
     this.email = document.getElementById("email");
     this.edad = document.getElementById("edad");
+    this.esatus = document.getElementById("estatus");
 
     this.listado = () => {
         fetch("../controllers/listado.php")
             .then((res) => res.json())
             .then((data) => {
+                console.log(data);
                 this.tbody.innerHTML = "";
                 data.forEach((item) => {
                     this.tbody.innerHTML += `
@@ -17,9 +19,8 @@ const app = new (function () {
                 <td>${item.nombres}</td>
                 <td>${item.email}</td>
                 <td>${item.edad}</td>
+                <td>${item.estatus}</td>    
                 <td>
-                  <a href="javascript:;" class="btn btn-warning btn-sm" onclick="app.editar(${item.id})">Editar</a>
-                  <a href="javascript:;" class="btn btn-danger btn-sm" onclick="app.eliminar(${item.id})">Eliminar</a>
                 </td>
               </tr>
             `;

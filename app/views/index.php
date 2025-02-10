@@ -49,7 +49,18 @@
                         min="18"
                         max="99"
                         required />
-                    <br />
+
+
+                    <label for="estatus">Estatus</label>
+                    <input type="
+                    type = " text"
+                        class="form-control"
+                        id="estatus"
+                        placeholder="Estatus en la empresa"
+                        autofocus
+                        required />
+                    <br>
+
                     <div>
                         <button type="submit" class="btn btn-primary">Guardar</button>
                         <button type="reset" class="btn btn-danger">Cancelar</button>
@@ -65,6 +76,7 @@
                             <th>Nombres</th>
                             <th>Email</th>
                             <th>Edad</th>
+                            <th>Estatus</th>
                             <th>Opciones</th>
                         </tr>
                     </thead>

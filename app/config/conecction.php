@@ -5,8 +5,8 @@ class Connection
 {
 
     public $host = 'localhost';
-    public $dbname = 'base';
-    public $port = '3307';
+    public $dbname = 'crud-php';
+    public $port = '3306';
     public $user = 'root';
     public $password = '';
     public $driver = 'mysql';

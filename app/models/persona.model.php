@@ -5,7 +5,7 @@ class Persona extends Connection
     public static function mostrarDatos()
     {
         try {
-            $sql = "SELECT * FROM persona";
+            $sql = "SELECT * FROM estatus_t WHERE id = 1";
             $stmt = Connection::getConnection()->prepare($sql);
             $stmt->execute();
             $result = $stmt->fetchAll();
@@ -14,6 +14,29 @@ class Persona extends Connection
             echo $th->getMessage();
         }
     }
+
+
+    // public static function mostrarDatos()
+    // {
+    //     try {
+    //         // Realizamos un JOIN entre persona y estatus para obtener ambos datos en una sola consulta
+    //         $sql = "SELECT persona.id, persona.nombres, persona.email, persona.edad, estatus.estatus_actividad
+    //                 FROM persona
+    //                 LEFT JOIN estatus ON persona.id = estatus.persona_id"; // JOIN correcto
+
+    //         $stmt = Connection::getConnection()->prepare($sql);
+    //         $stmt->execute();
+    //         $result = $stmt->fetchAll(PDO::FETCH_ASSOC); // Usamos FETCH_ASSOC para obtener resultados como un arreglo asociativo
+    //         return $result; // Devuelve los resultados como un arreglo
+    //     } catch (PDOException $e) {
+    //         echo "Error: " . $e->getMessage();
+    //     }
+    // }
+
+
+
+
+
     public static function obtenerDatoId($id)
     {
         try {
